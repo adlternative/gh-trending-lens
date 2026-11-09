@@ -3,6 +3,10 @@
 把 github.com/trending 的列表替换成我们自己的榜单：通过 GitHub Search API 找近 7 / 30 / 90 天新出的仓库，
 本地打分和分类，展示"真正有潜力"的新项目。GitHub 原榜保留在一个切换按钮后面。
 
+![GitHub Trending Lens：按分类浏览，点进大类后再按子类筛选](docs/preview.gif)
+
+> 上图由界面实拍，仓库名和数字是示例数据；分类和打分由仓库里的真实代码算出。
+
 ## 安装
 
 1. `chrome://extensions` 开启"开发者模式"，"加载已解压的扩展程序"选这个目录
@@ -45,6 +49,8 @@
 不按内容排除任何仓库；awesome、教程一类归入 Skills / 资料 大类的子类，想藏就在类别 chip 上右键。
 
 ## 分类
+
+![选中 AI / Agent 后出现子类筛选：插件、桌面 App、Agent CLI、框架、模型、记忆、评测](docs/screenshot.png)
 
 `classify.js` 里的关键词规则，按 name + description + topics 打分，最高分类别胜出，没命中归"传统软件"。
 Skills 类权重最高，因为它最容易和 AI 混淆。默认全部可见。⌥+点击或右键类别 chip 可以切换隐藏；
