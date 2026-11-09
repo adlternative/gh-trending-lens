@@ -1,23 +1,31 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><title>Trending Lens 设置</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trending Lens Settings</title>
 <style>
   :root { color-scheme: light dark; }
   body { font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; max-width:640px; margin:30px auto; padding:0 20px; }
   label { display:block; font-weight:600; margin:16px 0 4px; }
-  input, textarea { width:100%; font:inherit; padding:6px 8px; box-sizing:border-box; }
+  input, select, textarea { width:100%; font:inherit; padding:6px 8px; box-sizing:border-box; }
   textarea { height:48px; }
   .muted { color:#777; font-size:12px; }
   label.sub { font-weight:400; margin-left:16px; margin-top:8px; }
   button { font:inherit; padding:6px 14px; margin-top:16px; }
-</style></head>
+</style>
+</head>
 <body>
-<h2>GitHub Trending Lens 设置</h2>
-<label>GitHub token（可选）</label>
-<input id="token" type="password" placeholder="ghp_… 只需要 public_repo 或不勾任何权限">
-<p class="muted">不填也能用，但未认证的搜索接口限额是 10 次/分钟，一次刷新要 12 次左右，容易撞限。填了以后是 30 次/分钟。token 只存在本机 chrome.storage.sync 里，只发给 api.github.com。</p>
-<h3>自定义分类关键词</h3>
-<p class="muted">每类一行，逗号分隔，命中即加分。</p>
+<h2 id="title"></h2>
+<label id="lang-label" for="lang"></label>
+<select id="lang"></select>
+<p class="muted" id="lang-hint"></p>
+<label id="token-label" for="token"></label>
+<input id="token" type="password">
+<p class="muted" id="token-hint"></p>
+<h3 id="extra-title"></h3>
+<p class="muted" id="extra-hint"></p>
 <div id="fields"></div>
-<button id="save">保存</button> <span id="msg" class="muted"></span>
-<script src="classify.js"></script><script src="options.js"></script>
-</body></html>
+<button id="save"></button> <span id="msg" class="muted"></span>
+<script src="classify.js"></script><script src="i18n.js"></script><script src="options.js"></script>
+</body>
+</html>

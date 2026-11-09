@@ -14,6 +14,11 @@
 3. 建议在扩展"设置"里填一个 GitHub token（不需要任何权限勾选）。不填也能用，
    但未认证限额 10 次/分钟，一次刷新要 11 次，最后一两组查询可能被丢弃
 
+## 语言
+
+默认英文。扩展「设置」页顶部可以切换 English / 中文，选择存在 `chrome.storage.sync`，
+榜单页会立即重绘（已打开的 github.com/trending 标签页需要刷新一次）。
+
 ## 榜单
 
 - **新星**：创建 ≤ N 天、≤ 2000 star，按潜力得分排序。这是主视图
@@ -61,7 +66,8 @@ Skills 类权重最高，因为它最容易和 AI 混淆。默认全部可见。
 | 文件 | 作用 |
 |---|---|
 | `radar.js` | 查询构造、打分、分桶 |
-| `classify.js` | 分类规则 |
+| `classify.js` | 分类规则（id 和权重，文案不在这里） |
+| `i18n.js` | 中英文案，默认英文 |
 | `background.js` | 调 GitHub API、缓存、打开页面 |
 | `view.js` / `view.css` | 榜单渲染，独立页和注入页共用 |
 | `content.js` | 在 github.com/trending 替换原列表 |

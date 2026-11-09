@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "GitHub Trending Lens",
-  "version": "0.2.0",
-  "description": "用自己的榜单替换 GitHub Trending：按 AI/Agent、Skills、传统软件、硬件等分类，找真正有潜力的新项目",
+  "version": "0.3.0",
+  "description": "Replace GitHub Trending with a locally scored ranking of new repos, sorted into categories and subcategories",
   "permissions": ["storage"],
   "host_permissions": ["https://github.com/*", "https://api.github.com/*"],
   "action": { "default_title": "GitHub Trending Lens" },
@@ -10,7 +10,7 @@
   "background": { "service_worker": "background.js" },
   "content_scripts": [{
     "matches": ["https://github.com/trending*"],
-    "js": ["classify.js", "radar.js", "view.js", "content.js"],
+    "js": ["classify.js", "i18n.js", "radar.js", "view.js", "content.js"],
     "css": ["view.css"]
   }],
   "web_accessible_resources": [{ "resources": ["trending.html"], "matches": ["https://github.com/*"] }],
